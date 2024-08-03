@@ -43,9 +43,9 @@ public abstract class Auditable {
     // this method going to be called before any entities are saved in a database
     @PrePersist
     public void beforePersist() {
-        var userId = RequestContext.getUserId();
-        if (userId == null) {
-            throw new ApiException("cannot persist entity without user ID in RequestContext for this thread");}
+        var userId = 0L; //RequestContext.getUserId();
+       // if (userId == null) {
+           // throw new ApiException("cannot persist entity without user ID in RequestContext for this thread");}
             setCreateAt(now());
             setCreatedBy(userId);
             setUpdatedBy(userId);
@@ -55,9 +55,9 @@ public abstract class Auditable {
 
     @PreUpdate
     public void beforeUpdate() {
-        var userId = RequestContext.getUserId();
-        if (userId == null) {
-            throw new ApiException("cannot update entity without user ID in RequestContext for this threed");}
+        var userId = 0L; // RequestContext.getUserId();
+      //  if (userId == null) {
+        //    throw new ApiException("cannot update entity without user ID in RequestContext for this threed");}
             setUpdatedBy(userId);
             setUpdateAt(now());
     }

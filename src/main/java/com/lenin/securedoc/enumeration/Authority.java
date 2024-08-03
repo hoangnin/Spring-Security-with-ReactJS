@@ -3,7 +3,7 @@ package com.lenin.securedoc.enumeration;
 import static com.lenin.securedoc.constant.Constants.*;
 
 public enum Authority {
-    user(USER_AUTHORITIES),
+    USER(USER_AUTHORITIES),
     ADMIN(ADMIN_AUTHORITIES),
     SUPER_ADMIN(SUPER_ADMIN_AUTHORITIES),
     MANAGER(MANAGER_AUTHORITIES);
